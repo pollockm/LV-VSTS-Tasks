@@ -14,7 +14,7 @@
   "version": {
     "Major": "0",
     "Minor": "1",
-    "Patch": "2"
+    "Patch": "3"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "LVUTF $(lvPrjPath)",
@@ -34,6 +34,19 @@
       "defaultValue": "utf_results.xml",
       "required": true,
       "helpMarkDown": "Path to .lvproj file that contains the unit tests to run"
+    },
+	{
+      "name": "lvCLIType",
+      "type": "pickList",
+      "label": "LV CLI Type",
+      "defaultValue": "NI",
+      "required": true,
+      "helpMarkDown": "Determines which command-line interface (CLI) to use.  \n- NI: Built-in LabVIEW CLI, ships with LabVIEW in LabVIEW 2018 and later, compatible with LabVIEW 2014 and later.  [More information:](http://zone.ni.com/reference/en-XX/help/371361R-01/lvhowto/cli_running_operations/) \n- Wiresmith: 3rd-party LabVIEW CLI comptible with LabVIEW 2011 and later.  [More information:](https://github.com/JamesMc86/LabVIEW-CLI/wiki/Getting-Started-With-LabVIEW-CLI) \n - Use variable setting: not yet implemented",
+	  "options":{
+		"NI":"NI",
+		"Wiresmith":"Wiresmith",
+		"Variable":"Use variable setting"
+	  }
     }	
   ],
   "execution": {
