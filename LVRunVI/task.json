@@ -1,0 +1,45 @@
+{
+  "id": "6f5dd820-812e-11e8-97c2-d97c73133e7d",
+  "name": "LVRunVI",
+  "friendlyName": "LabVIEW - Run VI",
+  "description": "Run a VI and pass it command line arguments",
+  "author": "Matt Pollock",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "0"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "LVRunVI $(message)",
+  "inputs": [
+    {
+      "name": "viPath",
+      "type": "filePath",
+      "label": "VI Path",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Path to the .vi file on disk to execute"
+    },
+    {
+      "name": "viArgs",
+      "type": "string",
+      "label": "Command Line Arguments",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Command line arguments to pass to the VI."
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "lvrunvi.js",
+      "argumentFormat": ""
+    }
+  }
+}

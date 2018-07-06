@@ -1,0 +1,58 @@
+{
+  "id": "ff109b70-812d-11e8-8ce4-3d2aa102f9d0",
+  "name": "LVVIAnalyzer",
+  "friendlyName": "LabVIEW VI Analyzer",
+  "description": "Analyze VIs for static code quality",
+  "author": "Matt Pollock",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "2",
+    "Patch": "0"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "LVVIAnalyzer $(lvVIACfg) -> $(lvViaRptPath)",
+  "inputs": [
+    {
+      "name": "lvVIACfg",
+      "type": "filePath",
+      "label": "VI Analyzer Configuration File",
+      "defaultValue": "via_config.cfg",
+      "required": true,
+      "helpMarkDown": "Path to the VI Analyzer configuration file that defines the style checks to run"
+    },
+    {
+      "name": "lvViaRptPath",
+      "type": "filePath",
+      "label": "Report Path",
+      "defaultValue": "temp\\via_results.html",
+      "required": true,
+      "helpMarkDown": "Path where report file will be saved (example: temp\\via_results.html)"
+    },
+	{
+      "name": "lvViaRptFmt",
+      "type": "pickList",
+      "label": "Report Format",
+      "defaultValue": "HTML",
+      "required": true,
+      "helpMarkDown": "Format of the generated report file",
+	  "options":{
+		"ASCII":"ASCII",
+		"HTML":"HTML",
+		"RSL":"RSL"
+		}
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "lvvia.js",
+      "argumentFormat": ""
+    }
+  }
+}
