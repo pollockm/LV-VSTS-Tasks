@@ -4,7 +4,7 @@
   "friendlyName": "LabVIEW VI Analyzer",
   "description": "Analyze VIs for static code quality",
   "author": "Matt Pollock",
-  "helpMarkDown": "Replace with markdown to show in help",
+  "helpMarkDown": "",
   "category": "Utility",
   "visibility": [
     "Build",
@@ -14,7 +14,7 @@
   "version": {
     "Major": "0",
     "Minor": "2",
-    "Patch": "0"
+    "Patch": "1"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "LVVIAnalyzer $(lvVIACfg) -> $(lvViaRptPath)",

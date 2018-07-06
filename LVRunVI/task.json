@@ -4,7 +4,7 @@
   "friendlyName": "LabVIEW - Run VI",
   "description": "Run a VI and pass it command line arguments",
   "author": "Matt Pollock",
-  "helpMarkDown": "Replace with markdown to show in help",
+  "helpMarkDown": "",
   "category": "Utility",
   "visibility": [
     "Build",
@@ -14,10 +14,10 @@
   "version": {
     "Major": "0",
     "Minor": "1",
-    "Patch": "0"
+    "Patch": "1"
   },
   "minimumAgentVersion": "1.95.0",
-  "instanceNameFormat": "LVRunVI $(message)",
+  "instanceNameFormat": "LVRunVI $(viPath) $(viArgs)",
   "inputs": [
     {
       "name": "viPath",

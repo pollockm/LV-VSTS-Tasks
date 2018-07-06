@@ -2,9 +2,9 @@
   "id": "eab9d9c0-812d-11e8-a6a3-f5df05c0d212",
   "name": "LVUTF",
   "friendlyName": "LabVIEW Unit Test Framework",
-  "description": "Execute unit tests defined with the LabVIEW Unit Test Framework",
+  "description": "Execute unit tests defined with the LabVIEW Unit Test Framework and report in JUnit format",
   "author": "Matt Pollock",
-  "helpMarkDown": "Replace with markdown to show in help",
+  "helpMarkDown": "",
   "category": "Test",
   "visibility": [
     "Build",
@@ -14,10 +14,10 @@
   "version": {
     "Major": "0",
     "Minor": "1",
-    "Patch": "0"
+    "Patch": "2"
   },
   "minimumAgentVersion": "1.95.0",
-  "instanceNameFormat": "LVUTF $(message)",
+  "instanceNameFormat": "LVUTF $(lvPrjPath)",
   "inputs": [
     {
       "name": "lvPrjPath",
@@ -26,7 +26,15 @@
       "defaultValue": "",
       "required": true,
       "helpMarkDown": "Path to .lvproj file that contains the unit tests to run"
-    }
+    },
+    {
+      "name": "lvRptPath",
+      "type": "filePath",
+      "label": "Report Path",
+      "defaultValue": "utf_results.xml",
+      "required": true,
+      "helpMarkDown": "Path to .lvproj file that contains the unit tests to run"
+    }	
   ],
   "execution": {
     "Node": {
