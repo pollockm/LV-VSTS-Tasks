@@ -14,7 +14,7 @@
   "version": {
     "Major": "0",
     "Minor": "2",
-    "Patch": "8"
+    "Patch": "9"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "LVBuild $(lvPrjPath) $(lvPrjTarget) $(lvPrjBldName)",
@@ -39,9 +39,9 @@
       "name": "lvPrjBldName",
       "type": "string",
       "label": "Build Spec Name",
-      "defaultValue": "<All>",
-      "required": true,
-      "helpMarkDown": "Name of the build specification"
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Name of the build specification.  If blank, all build specifications under the selected target will be built."
     },
 	{
       "name": "lvCLIType",

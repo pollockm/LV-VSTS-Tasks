@@ -3,14 +3,21 @@ var tl = require('vso-task-lib');
 
 var echo = new tl.ToolRunner(tl.which('echo', true));
 
-var msg = tl.getInput('msg', true);
-echo.arg(msg);
+var lvPrjPath = tl.getPathInput('lvPrjPath', true);
+echo.arg(lvPrjPath);
 
-var cwd = tl.getPathInput('cwd', false);
+var lvPrjTarget = tl.getInput('lvPrjTarget', true);
+echo.arg(lvPrjTarget);
 
-// will error and fail task if it doesn't exist
-tl.checkPath(cwd, 'cwd');
-tl.cd(cwd);
+var lvPrjBldName = tl.getInput('lvPrjBldName', true);
+
+//check console out
+echo.arg("Hello world!");
+echo.arg(lvPrjBldName);
+
+// will error and fail task if project doesn't exist
+tl.checkPath(lvPrjPath, 'lvPrjPath');
+
 
 echo.exec({ failOnStdErr: false})
 .then(function(code) {
