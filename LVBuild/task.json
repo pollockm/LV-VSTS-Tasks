@@ -13,12 +13,20 @@
   "demands": [],
   "version": {
     "Major": "0",
-    "Minor": "2",
-    "Patch": "8"
+    "Minor": "4",
+    "Patch": "7"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "LVBuild $(lvPrjPath) $(lvPrjTarget) $(lvPrjBldName)",
   "inputs": [
+    {
+      "name": "lvVer",
+      "type": "string",
+      "label": "LabVIEW Version",
+      "defaultValue": "2016",
+      "required": true,
+      "helpMarkDown": "Version of LabVIEW development environment to use for build.  Example: 2016 (not 2016SP1, not 2018f03)"
+    },
     {
       "name": "lvPrjPath",
       "type": "filePath",
@@ -39,9 +47,9 @@
       "name": "lvPrjBldName",
       "type": "string",
       "label": "Build Spec Name",
-      "defaultValue": "<All>",
-      "required": true,
-      "helpMarkDown": "Name of the build specification"
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Name of the build specification.  If blank, all build specifications under the selected target will be built."
     },
 	{
       "name": "lvCLIType",
@@ -58,9 +66,11 @@
     }	
   ],
   "execution": {
-    "Node": {
-      "target": "lvbuild.js",
-      "argumentFormat": ""
-    }
+	"Process": {
+		"target": "C:\\Program Files (x86)\\LabVIEW-CLI\\labview-cli.exe",
+		"argumentFormat": "--kill --lv-ver $(lvVer) \"C:\\Users\\Public\\Documents\\National Instruments\\LV-CLI Common Steps\\steps\\lv-build.vi\" -- \"$(lvPrjPath)\"  \"$(lvPrjTarget)\"  \"$(lvPrjBldName)\" \"build_temp\" $(AGENT.BUILDDIRECTORY) ",
+		"workingDirectory": "",
+		"modifyEnvironment": "false"
+	}
   }
 }

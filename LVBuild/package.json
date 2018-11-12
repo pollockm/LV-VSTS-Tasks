@@ -1,0 +1,15 @@
+{
+  "name": "lvbuild",
+  "version": "1.0.0",
+  "description": "Build LV build spec",
+  "main": "lvbuild.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "path": "^0.12.7",
+    "vsts-task-lib": "^2.5.0"
+  }
+}
