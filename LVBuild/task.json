@@ -13,13 +13,8 @@
   "demands": [],
   "version": {
     "Major": "0",
-<<<<<<< HEAD
     "Minor": "4",
     "Patch": "7"
-=======
-    "Minor": "2",
-    "Patch": "9"
->>>>>>> 624add59c4b1dcb3bcff69dc5536f02733188606
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "LVBuild $(lvPrjPath) $(lvPrjTarget) $(lvPrjBldName)",
